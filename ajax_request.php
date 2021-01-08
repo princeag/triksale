@@ -60,17 +60,19 @@ if($callback == 'getUserProducts') {
                 }
             }	
         }
+
+        $where = rtrim($where, 'OR ');
     
         // error_log('where: '.$where);die;
-        $user_records_data = $obj_products->getAllUserRecordsBySearch($where, $start, $length, $sort_by, $sort_order);
-        $recordsFiltered = $user_records_data ? count($user_records_data) : 0;
+        $user_products_data = $obj_products->getAllUserProductsBySearch($where, $start, $length, $sort_by, $sort_order);
+        $recordsFiltered = $user_products_data ? count($user_products_data) : 0;
     }
     else {
-        $user_records_data = $obj_products->getAllUserProducts($start, $length, $sort_by, $sort_order);
+        $user_products_data = $obj_products->getAllUserProducts($start, $length, $sort_by, $sort_order);
         $recordsFiltered = $recordsTotal;
     }
     
-    $datatble_data = array('draw'=> $draw, 'data'=> $user_records_data, 'recordsFiltered'=> $recordsFiltered, 'recordsTotal'=> $recordsTotal);
+    $datatble_data = array('draw'=> $draw, 'data'=> $user_products_data, 'recordsFiltered'=> $recordsFiltered, 'recordsTotal'=> $recordsTotal);
     
     echo json_encode($datatble_data);
     exit;

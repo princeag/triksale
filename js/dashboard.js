@@ -265,7 +265,7 @@ column_defs = [
     },
     {
         'data': 'action',
-        'searchable': true,
+        'searchable': false,
         'targets': [6],
         'render': function(data, type, row, meta){
             return '<a href="add_product.php?id='+row.id+'">View</a>';

@@ -32,3 +32,44 @@ Android 6.0 marshmallow with 1.3 Ghz Quad Core',
 [08-Jan-2021 17:13:35 Asia/Kolkata] mi_phone2-1610106199.png
 [08-Jan-2021 17:13:35 Asia/Kolkata] image: '16'
 [08-Jan-2021 17:13:35 Asia/Kolkata] image: true
+[08-Jan-2021 20:31:47 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'where clause' in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%redm%...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 20:31:47 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'where clause' in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%redmi...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 21:19:11 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'where clause' in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%redm%...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 21:20:40 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'action' in 'where clause' in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%rdem%...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 21:22:28 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND user_id = 3 ORDER BY id desc LIMIT 15 OFFSET 0' at line 1 in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%rdem%...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 21:23:04 Asia/Kolkata] SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (id LIKE '%rdemi%' OR name LIKE '%rdemi%' OR price LIKE '%rdemi%' OR quantity LIKE '%rdemi%' OR date_add LIKE '%rdemi%' OR ) AND user_id = :user_id ORDER BY id desc LIMIT 15 OFFSET 0
+[08-Jan-2021 21:23:04 Asia/Kolkata] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND user_id = 3 ORDER BY id desc LIMIT 15 OFFSET 0' at line 1 in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php:106
+Stack trace:
+#0 /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php(106): PDOStatement->execute()
+#1 /opt/lampp/htdocs/triksale/ajax_request.php(65): ModelProducts->getAllUserProductsBySearch('id LIKE '%rdemi...', '0', '15', 'id', 'desc')
+#2 {main}
+  thrown in /opt/lampp/htdocs/triksale/classes/models/ModelProducts.php on line 106
+[08-Jan-2021 21:24:22 Asia/Kolkata] SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (id LIKE '%redm%' OR name LIKE '%redm%' OR price LIKE '%redm%' OR quantity LIKE '%redm%' OR date_add LIKE '%redm%') AND user_id = :user_id ORDER BY id desc LIMIT 15 OFFSET 0
+[08-Jan-2021 21:24:23 Asia/Kolkata] SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (id LIKE '%redmi%' OR name LIKE '%redmi%' OR price LIKE '%redmi%' OR quantity LIKE '%redmi%' OR date_add LIKE '%redmi%') AND user_id = :user_id ORDER BY id desc LIMIT 15 OFFSET 0
+[08-Jan-2021 21:24:25 Asia/Kolkata] SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (id LIKE '%redm%' OR name LIKE '%redm%' OR price LIKE '%redm%' OR quantity LIKE '%redm%' OR date_add LIKE '%redm%') AND user_id = :user_id ORDER BY id desc LIMIT 15 OFFSET 0
+[08-Jan-2021 21:24:30 Asia/Kolkata] SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (id LIKE '%3500%' OR name LIKE '%3500%' OR price LIKE '%3500%' OR quantity LIKE '%3500%' OR date_add LIKE '%3500%') AND user_id = :user_id ORDER BY id desc LIMIT 15 OFFSET 0

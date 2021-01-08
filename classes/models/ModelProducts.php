@@ -95,6 +95,18 @@ class ModelProducts{
 		$num_rows = $stmt->rowCount();
 		
 		return !$num_rows ? false : $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}	
+
+	public function getAllUserProductsBySearch($where, $start, $length, $sort_by, $sort_order) {
+        $sql = "SELECT p.id, (SELECT pi.image_name FROM product_images pi WHERE pi.product_id = p.id ORDER BY id ASC LIMIT 1) image_name, p.name, p.price, p.quantity, DATE_FORMAT(p.date_add, '%d %b %Y') date_add FROM products p WHERE (".$where.") AND user_id = :user_id ORDER BY $sort_by $sort_order LIMIT $length OFFSET $start";
+		error_log($sql);
+		$db = Db::PdoConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':user_id', $this->user_id, PDO::PARAM_INT);
+		$stmt->execute();
+		$num_rows = $stmt->rowCount();
+		
+		return !$num_rows ? false : $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	public function getProducts() {
